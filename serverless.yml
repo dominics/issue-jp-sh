@@ -1,0 +1,21 @@
+service: foo
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+plugins:
+  - serverless-jetpack
+
+custom:
+  jetpack:
+    preInclude:
+      - "!**"
+    trace: true
+
+package:
+  individually: true
+
+functions:
+  foo:
+    handler: index.handler
